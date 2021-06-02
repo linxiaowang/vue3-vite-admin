@@ -1,4 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import { loginGuard } from './guards'
+import { ElMessage } from "element-plus";
 /**
  * Note: 子菜单仅当路由的children.length >= 1时才出现
  *
@@ -47,6 +49,15 @@ export const routes = [
                 }
             },
         ]
+    },
+    {
+        path: '/login',
+        name: 'login',
+        hidden: true,
+        component: () => import('views/login.vue'),
+        meta:{
+            title: '登录',
+        }
     }
 ]
 
@@ -54,5 +65,10 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes,
 });
+
+// router.beforeEach((to, from, next)=>{
+//     loginGuard(to, from, next, ElMessage)
+// })
+
 
 export default router
