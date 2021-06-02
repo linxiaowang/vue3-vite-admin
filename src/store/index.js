@@ -1,4 +1,5 @@
 import { createStore } from "vuex"
+import modules from './modules'
 
 const store = createStore({
     state: {
@@ -8,7 +9,8 @@ const store = createStore({
         add(state){
             state.counter++
         }
-    }
+    },
+    modules
 })
 
 export default store
