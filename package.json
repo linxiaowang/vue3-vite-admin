@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "dayjs": "^1.10.5",
     "element-plus": "^1.0.2-beta.45",
+    "js-cookie": "^2.2.1",
     "mockjs": "^1.1.0",
     "path-browserify": "^1.0.1",
     "path-to-regexp": "^6.2.0",

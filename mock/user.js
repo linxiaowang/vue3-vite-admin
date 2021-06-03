@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 const mockList = [
     { id: 1, name: "tom", age: 18 },
     { id: 2, name: "jerry", age: 18 },
@@ -7,15 +8,15 @@ const mockList = [
     { id: 6, name: "white", age: 18 },
     { id: 7, name: "peter", age: 18 },
     { id: 8, name: "james", age: 18 },
-  ];
+];
 export default [
     {
         url: '/api/getUser',
         method: 'post',
         response: ({ body }) => {
-            const {pageNo, pageSize} = body;
-            const data = mockList.filter((item, index)=>{
-                return index < pageSize * pageNo && index >= pageSize * (pageNo -1)
+            const { pageNo, pageSize } = body;
+            const data = mockList.filter((item, index) => {
+                return index < pageSize * pageNo && index >= pageSize * (pageNo - 1)
             })
             return {
                 code: 100,
@@ -37,8 +38,9 @@ export default [
                     data: {
                         id: '128379812379',
                         name: 'Bob Dylan',
-                        avatar: 'http://i0.hdslb.com/bfs/article/878a6c57bed136d9d176a6eb8289a04787b126bf.jpg'
-
+                        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+                        token: 'eaoihdoasihdnoanmd',
+                        expireTime: dayjs().add(30, 'm').valueOf()
                     },
                 };
             }

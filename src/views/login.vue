@@ -9,11 +9,7 @@
       <h2 class="mb-8">WELCOME TO MY WORLD</h2>
       <el-form class="w-full" :model="form" :rules="rules" ref="ruleForm">
         <el-form-item prop="name">
-          <el-input
-            v-model="form.name"
-            prefix-icon="el-icon-user"
-            placeholder="admin"
-          ></el-input>
+          <el-input v-model="form.name" prefix-icon="el-icon-user" placeholder="admin"></el-input>
         </el-form-item>
         <el-form-item prop="password">
           <el-input
@@ -30,8 +26,7 @@
             type="primary"
             @click="submitForm('ruleForm')"
             :loading="loading"
-            >^点我提交^</el-button
-          >
+          >^点我提交^</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -43,7 +38,7 @@ import { ref } from "vue";
 import { login } from "service/user";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
-console.log(this);
+import { setAuthorization } from 'utils/athorization'
 
 const store = useStore();
 const router = useRouter();
@@ -56,7 +51,7 @@ const form = ref({
 const rules = ref({
   name: {
     required: true,
-    message: "你忘了你的名字吗",
+    message: "你也忘了你的名字吗",
   },
   password: {
     required: true,
@@ -66,7 +61,7 @@ const rules = ref({
 
 const ruleForm = ref(null);
 const loading = ref(false);
-
+console.log(store)
 const submitForm = () => {
   console.log(ruleForm.value);
   ruleForm.value.validate(async (valid) => {
@@ -77,14 +72,15 @@ const submitForm = () => {
         name,
         password,
       });
-        const { avatar, name: userName, id } = res.data;
-        store.commit("user/setAvatar", avatar);
-        store.commit("user/setName", userName);
-        store.commit("user/setId", id);
-        loading.value = false;
-        router.push({
-          path: "/home",
-        });
+      loading.value = false;
+      const { avatar, name: userName, id, token, expireTime } = res.data;
+      store.commit("user/setAvatar", avatar);
+      store.commit("user/setName", userName);
+      store.commit("user/setId", id);
+      setAuthorization({ token, expireAt: +expireTime });
+      router.push({
+        path: "/home",
+      });
     } else {
       console.log("error submit!!");
       return false;

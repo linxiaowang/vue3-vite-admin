@@ -66,9 +66,9 @@ const router = createRouter({
     routes,
 });
 
-// router.beforeEach((to, from, next)=>{
-//     loginGuard(to, from, next, ElMessage)
-// })
+router.beforeEach((to, from, next)=>{
+    loginGuard(to, from, next, ElMessage)
+})
 
 
 export default router

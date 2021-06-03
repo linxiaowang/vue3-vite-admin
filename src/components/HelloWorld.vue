@@ -40,12 +40,6 @@ const emit = defineEmit(["myclick"]);
 
 const state = reactive({ count: 0 });
 
-// 请求
-fetch("/api/getUsers")
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-  });
 
 const onClick = () => {
   emit("myclick");

@@ -14,15 +14,17 @@ const service = axios.create({
     timeout: 5000,
 });
 
+
+
 // 请求拦截
 service.interceptors.request.use(
     (config) => {
         // 指定请求令牌
-        // if (store.getters.token) {
-        // // 自定义令牌的字段名为X-Token，根据咱们后台再做修改
-        // config.headers["X-Token"] = store.getters.token;
-        // }
-        config.headers["X-Token"] = "my token";
+        if (store.getters['user/token']) {
+        // 自定义令牌的字段名为X-Token，根据咱们后台再做修改
+        config.headers["X-Token"] = store.getters['user/token'];
+        }
+        // config.headers["X-Token"] = "my token";
         return config;
     },
     (error) => {
@@ -66,10 +68,9 @@ service.interceptors.response.use(
                     });
                 });
             }
-            return Promise.reject(new Error(res.message || "Error"));
-        } else {
-            return res;
         }
+        
+        return res;
     },
     (error) => {
         console.log("err" + error); // for debug

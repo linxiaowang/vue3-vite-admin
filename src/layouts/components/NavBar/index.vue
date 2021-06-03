@@ -5,35 +5,14 @@
 
     <!-- 右侧菜单 -->
     <div class="flex items-center h-full float-right">
-      <el-dropdown>
-        <div class="inline-flex items-center">
-          <el-avatar
-            class="mr-4"
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-          ></el-avatar>
-          <span class="name">王小虎</span>
-        </div>
-        <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item @click="exit">退出登录</el-dropdown-item>
-          </el-dropdown-menu>
-        </template>
-      </el-dropdown>
+      <Avatar/>
     </div>
   </div>
 </template>
 
 <script setup>
 import Breadcrumb from "./Breadcrumb.vue";
-import { logout } from "service/user";
-import { useRouter } from "vue-router";
-const router = useRouter();
-const exit = () => {
-  logout();
-  router.push({
-    path: "login",
-  });
-};
+import Avatar from './Avatar.vue'
 </script>
 
 <style lang="scss" scoped>

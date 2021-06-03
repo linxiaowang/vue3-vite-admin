@@ -6,6 +6,7 @@ import { viteMockServe } from 'vite-plugin-mock';
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import styleImport from 'vite-plugin-style-import'
+import myExample from './plugins/vite-plugin-my-example'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -24,7 +25,7 @@ export default defineConfig({
       'service': path.resolve(__dirname, 'src/service'),
     },
   },
-  plugins: [vue(), vueJsx(), viteMockServe({
+  plugins: [vue(), myExample(), vueJsx(), viteMockServe({
     supportTs: false
   }), styleImport({
     libs: [{
