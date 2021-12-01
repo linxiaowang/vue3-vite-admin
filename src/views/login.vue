@@ -51,7 +51,7 @@ const form = ref({
 const rules = ref({
   name: {
     required: true,
-    message: "你也忘了你的名字吗",
+    message: "喝! 报上名来",
   },
   password: {
     required: true,

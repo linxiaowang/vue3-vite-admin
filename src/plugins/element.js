@@ -1,8 +1,6 @@
 
-import 'element-plus/packages/theme-chalk/src/base.scss'
+import 'element-plus/dist/index.css'
 import {
-    
-    ElAvatar,
     ElBreadcrumb,
     ElBreadcrumbItem,
     ElButton,
@@ -11,6 +9,8 @@ import {
     ElIcon,
     ElImage,
     ElInput,
+    ElForm,
+    ElFormItem,
     ElMenu,
     ElMenuItem,
     ElMenuItemGroup,
@@ -27,7 +27,6 @@ import {
 } from 'element-plus';
 
 const components = [
-    ElAvatar,
     ElBreadcrumb,
     ElBreadcrumbItem,
     ElButton,
@@ -43,7 +42,9 @@ const components = [
     ElScrollbar,
     ElDropdown,
     ElDropdownMenu,
-    ElDropdownItem
+    ElDropdownItem,
+    ElForm,
+    ElFormItem,
 ]
 
 const plugins = [
