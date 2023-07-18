@@ -1,5 +1,5 @@
 <template>
-  <div class="relative h-16 pl-7 pr-7 shadow-sm">
+  <div class="relative flex items-center justify-between h-16 pl-7 pr-7 shadow-sm">
     <!-- 面包屑 -->
     <breadcrumb class="float-left"></breadcrumb>
 
