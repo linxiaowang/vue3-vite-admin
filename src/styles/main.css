@@ -9,3 +9,7 @@ body,
 html.dark {
   background: #121212;
 }
+
+:root {
+  --el-color-primary: green;
+}
