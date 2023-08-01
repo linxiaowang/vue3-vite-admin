@@ -4,6 +4,7 @@ specifiers:
   '@antfu/eslint-config': ^0.39.8
   '@iconify-json/carbon': ^1.1.17
   '@types/node': ^20.2.5
+  '@types/nprogress': ^0.2.0
   '@unocss/eslint-config': ^0.53.0
   '@unocss/reset': ^0.53.0
   '@vitejs/plugin-vue': ^4.2.3
@@ -14,8 +15,11 @@ specifiers:
   eslint: ^8.45.0
   jsdom: ^22.1.0
   lint-staged: ^13.2.2
+  nprogress: ^0.2.0
   pinia: ^2.1.4
   pnpm: ^8.6.0
+  sass: ^1.64.0
+  sass-loader: ^13.3.2
   simple-git-hooks: ^2.8.1
   taze: ^0.10.2
   typescript: ^5.1.3
@@ -33,6 +37,7 @@ specifiers:
 dependencies:
   '@vueuse/core': registry.npmjs.org/@vueuse/core/10.2.1_vue@3.3.4
   element-plus: registry.npmjs.org/element-plus/2.3.8_vue@3.3.4
+  nprogress: registry.npmjs.org/nprogress/0.2.0
   pinia: registry.npmjs.org/pinia/2.1.4_typescript@5.1.6+vue@3.3.4
   vue: registry.npmjs.org/vue/3.3.4
   vue-router: registry.npmjs.org/vue-router/4.2.4_vue@3.3.4
@@ -41,6 +46,7 @@ devDependencies:
   '@antfu/eslint-config': registry.npmjs.org/@antfu/eslint-config/0.39.8_ko3fmmbeyij36muomfgt2u76xu
   '@iconify-json/carbon': registry.npmjs.org/@iconify-json/carbon/1.1.18
   '@types/node': registry.npmjs.org/@types/node/20.4.2
+  '@types/nprogress': registry.npmjs.org/@types/nprogress/0.2.0
   '@unocss/eslint-config': registry.npmjs.org/@unocss/eslint-config/0.53.5_ko3fmmbeyij36muomfgt2u76xu
   '@unocss/reset': registry.npmjs.org/@unocss/reset/0.53.5
   '@vitejs/plugin-vue': registry.npmjs.org/@vitejs/plugin-vue/4.2.3_vite@4.4.4+vue@3.3.4
@@ -50,6 +56,8 @@ devDependencies:
   jsdom: registry.npmjs.org/jsdom/22.1.0
   lint-staged: registry.npmjs.org/lint-staged/13.2.3
   pnpm: registry.npmjs.org/pnpm/8.6.9
+  sass: registry.npmjs.org/sass/1.64.0
+  sass-loader: registry.npmjs.org/sass-loader/13.3.2_sass@1.64.0
   simple-git-hooks: registry.npmjs.org/simple-git-hooks/2.8.1
   taze: registry.npmjs.org/taze/0.10.3
   typescript: registry.npmjs.org/typescript/5.1.6
@@ -57,9 +65,9 @@ devDependencies:
   unplugin-auto-import: registry.npmjs.org/unplugin-auto-import/0.16.6_@vueuse+core@10.2.1
   unplugin-vue-components: registry.npmjs.org/unplugin-vue-components/0.25.1_vue@3.3.4
   unplugin-vue-macros: registry.npmjs.org/unplugin-vue-macros/2.3.7_5irngq4yvoky3wmh3vqfitdchu
-  vite: registry.npmjs.org/vite/4.4.4_@types+node@20.4.2
+  vite: registry.npmjs.org/vite/4.4.4_2gjezpbbi4zq7jwehzi3egcs3e
   vite-plugin-pages: registry.npmjs.org/vite-plugin-pages/0.31.0_vite@4.4.4
-  vitest: registry.npmjs.org/vitest/0.31.4_jsdom@22.1.0
+  vitest: registry.npmjs.org/vitest/0.31.4_jsdom@22.1.0+sass@1.64.0
   vue-tsc: registry.npmjs.org/vue-tsc/1.8.5_typescript@5.1.6
 
 packages:
@@ -1013,6 +1021,12 @@ packages:
     version: 2.4.1
     dev: true
 
+  registry.npmjs.org/@types/nprogress/0.2.0:
+    resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/nprogress/-/nprogress-0.2.0.tgz}
+    name: '@types/nprogress'
+    version: 0.2.0
+    dev: true
+
   registry.npmjs.org/@types/semver/7.5.0:
     resolution: {integrity: sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/semver/-/semver-7.5.0.tgz}
     name: '@types/semver'
@@ -1525,7 +1539,7 @@ packages:
       chokidar: registry.npmjs.org/chokidar/3.5.3
       fast-glob: registry.npmjs.org/fast-glob/3.3.0
       magic-string: registry.npmjs.org/magic-string/0.30.1
-      vite: registry.npmjs.org/vite/4.4.4_@types+node@20.4.2
+      vite: registry.npmjs.org/vite/4.4.4_2gjezpbbi4zq7jwehzi3egcs3e
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -1540,7 +1554,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: registry.npmjs.org/vite/4.4.4_@types+node@20.4.2
+      vite: registry.npmjs.org/vite/4.4.4_2gjezpbbi4zq7jwehzi3egcs3e
       vue: registry.npmjs.org/vue/3.3.4
     dev: true
 
@@ -1939,7 +1953,7 @@ packages:
         optional: true
     dependencies:
       sirv: registry.npmjs.org/sirv/2.0.3
-      vite: registry.npmjs.org/vite/4.4.4_@types+node@20.4.2
+      vite: registry.npmjs.org/vite/4.4.4_2gjezpbbi4zq7jwehzi3egcs3e
       vue: registry.npmjs.org/vue/3.3.4
     dev: true
 
@@ -4502,6 +4516,12 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+  registry.npmjs.org/immutable/4.3.1:
+    resolution: {integrity: sha512-lj9cnmB/kVS0QHsJnYKD1uo3o39nrbKxszjnqS9Fr6NB7bZzW45U6WSGBPKXDL/CvDKqDNPA4r3DoDQ8GTxo2A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/immutable/-/immutable-4.3.1.tgz}
+    name: immutable
+    version: 4.3.1
+    dev: true
+
   registry.npmjs.org/import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/import-fresh/-/import-fresh-3.3.0.tgz}
     name: import-fresh
@@ -5579,6 +5599,12 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
+  registry.npmjs.org/neo-async/2.6.2:
+    resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz}
+    name: neo-async
+    version: 2.6.2
+    dev: true
+
   registry.npmjs.org/node-fetch-native/1.2.0:
     resolution: {integrity: sha512-5IAMBTl9p6PaAjYCnMv5FmqIF6GcZnawAVnzaCG0rX2aYZJ4CxEkZNtVPuTRug7fL7wyM5BQYTlAzcyMPi6oTQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/node-fetch-native/-/node-fetch-native-1.2.0.tgz}
     name: node-fetch-native
@@ -5767,6 +5793,12 @@ packages:
       gauge: registry.npmjs.org/gauge/4.0.4
       set-blocking: registry.npmjs.org/set-blocking/2.0.0
     dev: true
+
+  registry.npmjs.org/nprogress/0.2.0:
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/nprogress/-/nprogress-0.2.0.tgz}
+    name: nprogress
+    version: 0.2.0
+    dev: false
 
   registry.npmjs.org/nth-check/2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/nth-check/-/nth-check-2.1.1.tgz}
@@ -6503,6 +6535,44 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz}
     name: safer-buffer
     version: 2.1.2
+    dev: true
+
+  registry.npmjs.org/sass-loader/13.3.2_sass@1.64.0:
+    resolution: {integrity: sha512-CQbKl57kdEv+KDLquhC+gE3pXt74LEAzm+tzywcA0/aHZuub8wTErbjAoNI57rPUWRYRNC5WUnNl8eGJNbDdwg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/sass-loader/-/sass-loader-13.3.2.tgz}
+    id: registry.npmjs.org/sass-loader/13.3.2
+    name: sass-loader
+    version: 13.3.2
+    engines: {node: '>= 14.15.0'}
+    peerDependencies:
+      fibers: '>= 3.1.0'
+      node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
+      sass: ^1.3.0
+      sass-embedded: '*'
+      webpack: ^5.0.0
+    peerDependenciesMeta:
+      fibers:
+        optional: true
+      node-sass:
+        optional: true
+      sass:
+        optional: true
+      sass-embedded:
+        optional: true
+    dependencies:
+      neo-async: registry.npmjs.org/neo-async/2.6.2
+      sass: registry.npmjs.org/sass/1.64.0
+    dev: true
+
+  registry.npmjs.org/sass/1.64.0:
+    resolution: {integrity: sha512-m7YtAGmQta9uANIUJwXesAJMSncqH+3INc8kdVXs6eV6GUC8Qu2IYKQSN8PRLgiQfpca697G94klm2leYMxSHw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/sass/-/sass-1.64.0.tgz}
+    name: sass
+    version: 1.64.0
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: registry.npmjs.org/chokidar/3.5.3
+      immutable: registry.npmjs.org/immutable/4.3.1
+      source-map-js: registry.npmjs.org/source-map-js/1.0.2
     dev: true
 
   registry.npmjs.org/saxes/6.0.0:
@@ -7283,7 +7353,7 @@ packages:
     dependencies:
       '@antfu/utils': registry.npmjs.org/@antfu/utils/0.7.5
       unplugin: registry.npmjs.org/unplugin/1.4.0
-      vite: registry.npmjs.org/vite/4.4.4_@types+node@20.4.2
+      vite: registry.npmjs.org/vite/4.4.4_2gjezpbbi4zq7jwehzi3egcs3e
     dev: true
 
   registry.npmjs.org/unplugin-vue-components/0.25.1_vue@3.3.4:
@@ -7433,7 +7503,7 @@ packages:
       builtins: registry.npmjs.org/builtins/5.0.1
     dev: true
 
-  registry.npmjs.org/vite-node/0.31.4_@types+node@20.4.2:
+  registry.npmjs.org/vite-node/0.31.4_2gjezpbbi4zq7jwehzi3egcs3e:
     resolution: {integrity: sha512-uzL377GjJtTbuc5KQxVbDu2xfU/x0wVjUtXQR2ihS21q/NK6ROr4oG0rsSkBBddZUVCwzfx22in76/0ZZHXgkQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/vite-node/-/vite-node-0.31.4.tgz}
     id: registry.npmjs.org/vite-node/0.31.4
     name: vite-node
@@ -7446,7 +7516,7 @@ packages:
       mlly: registry.npmjs.org/mlly/1.4.0
       pathe: registry.npmjs.org/pathe/1.1.1
       picocolors: registry.npmjs.org/picocolors/1.0.0
-      vite: registry.npmjs.org/vite/4.4.4_@types+node@20.4.2
+      vite: registry.npmjs.org/vite/4.4.4_2gjezpbbi4zq7jwehzi3egcs3e
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -7478,13 +7548,13 @@ packages:
       json5: registry.npmjs.org/json5/2.2.3
       local-pkg: registry.npmjs.org/local-pkg/0.4.3
       picocolors: registry.npmjs.org/picocolors/1.0.0
-      vite: registry.npmjs.org/vite/4.4.4_@types+node@20.4.2
+      vite: registry.npmjs.org/vite/4.4.4_2gjezpbbi4zq7jwehzi3egcs3e
       yaml: registry.npmjs.org/yaml/2.3.1
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  registry.npmjs.org/vite/4.4.4_@types+node@20.4.2:
+  registry.npmjs.org/vite/4.4.4_2gjezpbbi4zq7jwehzi3egcs3e:
     resolution: {integrity: sha512-4mvsTxjkveWrKDJI70QmelfVqTm+ihFAb6+xf4sjEU2TmUCTlVX87tmg/QooPEMQb/lM9qGHT99ebqPziEd3wg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/vite/-/vite-4.4.4.tgz}
     id: registry.npmjs.org/vite/4.4.4
     name: vite
@@ -7519,11 +7589,12 @@ packages:
       esbuild: registry.npmjs.org/esbuild/0.18.14
       postcss: registry.npmjs.org/postcss/8.4.26
       rollup: registry.npmjs.org/rollup/3.26.3
+      sass: registry.npmjs.org/sass/1.64.0
     optionalDependencies:
       fsevents: registry.npmjs.org/fsevents/2.3.2
     dev: true
 
-  registry.npmjs.org/vitest/0.31.4_jsdom@22.1.0:
+  registry.npmjs.org/vitest/0.31.4_jsdom@22.1.0+sass@1.64.0:
     resolution: {integrity: sha512-GoV0VQPmWrUFOZSg3RpQAPN+LPmHg2/gxlMNJlyxJihkz6qReHDV6b0pPDcqFLNEPya4tWJ1pgwUNP9MLmUfvQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/vitest/-/vitest-0.31.4.tgz}
     id: registry.npmjs.org/vitest/0.31.4
     name: vitest
@@ -7580,8 +7651,8 @@ packages:
       strip-literal: registry.npmjs.org/strip-literal/1.0.1
       tinybench: registry.npmjs.org/tinybench/2.5.0
       tinypool: registry.npmjs.org/tinypool/0.5.0
-      vite: registry.npmjs.org/vite/4.4.4_@types+node@20.4.2
-      vite-node: registry.npmjs.org/vite-node/0.31.4_@types+node@20.4.2
+      vite: registry.npmjs.org/vite/4.4.4_2gjezpbbi4zq7jwehzi3egcs3e
+      vite-node: registry.npmjs.org/vite-node/0.31.4_2gjezpbbi4zq7jwehzi3egcs3e
       why-is-node-running: registry.npmjs.org/why-is-node-running/2.2.2
     transitivePeerDependencies:
       - less

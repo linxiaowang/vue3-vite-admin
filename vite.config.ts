@@ -15,6 +15,13 @@ export default defineConfig({
       '~/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@use "~/styles/element/index.scss" as *;',
+      },
+    },
+  },
   plugins: [
     VueMacros({
       defineOptions: false,

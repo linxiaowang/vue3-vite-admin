@@ -1,5 +1,3 @@
 <template>
-  <main font-sans>
-    <RouterView />
-  </main>
+  <RouterView />
 </template>
