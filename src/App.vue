@@ -1,14 +1,22 @@
-<script setup lang="ts">
-const zIndex = ref(3000)
-const size = ref('small')
+<script>
+import { defineComponent } from 'vue'
+import { ElConfigProvider } from 'element-plus'
+
+export default defineComponent({
+  components: {
+    ElConfigProvider,
+  },
+  setup() {
+    return {
+      size: 'small',
+      zIndex: 3000,
+    }
+  },
+})
 </script>
 
 <template>
-  <el-config-provider :size="size" :z-index="zIndex">
+  <ElConfigProvider :size="size" :z-index="zIndex">
     <RouterView />
-  </el-config-provider>
+  </ElConfigProvider>
 </template>
-
- <style scoped>
-
- </style>

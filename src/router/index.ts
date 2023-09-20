@@ -11,7 +11,7 @@ const router = createRouter({
     name: 'Layout',
   }, {
     path: '/login',
-    component: () => import('~/views/login/Login.vue'),
+    component: () => import('~/views/login/index.vue'),
     name: 'Login',
   }],
   scrollBehavior: () => ({ left: 0, top: 0 }),
